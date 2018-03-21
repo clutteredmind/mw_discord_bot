@@ -1,0 +1,6 @@
+{
+    "discordToken": "app token from your developer page",
+    "botName": "name of the bot",
+    "myAnimeListUsername": "username for MAL",
+    "myAnimeListPassword": "password for MAL"
+}
