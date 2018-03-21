@@ -15,10 +15,6 @@
   },
   "author": "ClutteredMind",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/clutteredmind/mw_discord_bot/issues"
-  },
-  "homepage": "https://github.com/clutteredmind/mw_discord_bot#readme",
   "dependencies": {
     "discord.js": "^11.3.2",
     "winston": "^2.4.1"
