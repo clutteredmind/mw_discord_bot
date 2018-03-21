@@ -37,8 +37,10 @@ function makeBot() {
                 case MessageTypes.Kiss:
                 case MessageTypes.Slap:
                 case MessageTypes.Poke:
-                case MessageTypes.Anime:
                     messageType.respond(message.channel, message.author.username, message.mentions.users.first().toString());
+                    break;
+                case MessageTypes.Anime:
+                    messageType.respond(message.channel, message.content);
                     break;
                 case MessageTypes.None:
                 default:

@@ -8,6 +8,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const request = require('request');
+const authInfo = require('./auth.json');
 
 const MessageTypes = {
     None: {},
@@ -84,8 +86,24 @@ const MessageTypes = {
         }
     },
     Anime: {
-        respond: (channel) => {
-            channel.send('anime');
+        respond: (channel, messageContent) => {
+            // split at the spaces, discard the first element (the bot command) and re-assemble with plus signs to get the query string
+            let queryString = messageContent.split(' ').slice(1).join('+');
+            if (queryString) {
+                request({
+                    method: 'GET',
+                    uri: `https://myanimelist.net/api/anime/search.xml?q=${queryString}`,
+                    headers: {
+                        'Authorization': "Basic " + new Buffer(authInfo.myAnimeListUsername + ":" + authInfo.myAnimeListPassword).toString("base64")
+                    }
+                }, (error, response, body) => {
+                    if (error) {
+                        channel.send(`unable to find: ${queryString.replace(/\+/g, ' ')} :(`);
+                    } else {
+                        channel.send('found it!');
+                    }
+                });
+            }
         }
     }
 };
