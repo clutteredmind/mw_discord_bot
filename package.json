@@ -1,0 +1,30 @@
+{
+  "name": "mw_discord_bot",
+  "version": "0.0.1",
+  "description": "Yet another Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "monitor": "nodemon index.js",
+    "start": "node index.js",
+    "test": "mocha",
+    "watch-test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clutteredmind/mw_discord_bot.git"
+  },
+  "author": "ClutteredMind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clutteredmind/mw_discord_bot/issues"
+  },
+  "homepage": "https://github.com/clutteredmind/mw_discord_bot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "winston": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
+  }
+}
