@@ -20,7 +20,8 @@ const MessageTypes = {
                 "'hug <user mention>' - Hugs someone.\n" +
                 "'kiss <user mention>' - Kisses someone.\n" +
                 "'slap <user mention>' - Slaps someone\n" +
-                "'poke <user mention>' - Pokes someone.";
+                "'poke <user mention>' - Pokes someone.\n" +
+                "'anime <name of anime>' - Searches MyAnimeList.com for information about the anime you've selected.";
             channel.send(helpText);
         }
     },
