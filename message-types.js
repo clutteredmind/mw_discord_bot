@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const request = require('request');
 const authInfo = require('./auth.json');
+const xmlParser = require('xml-parser');
 
 const MessageTypes = {
     None: {},
@@ -101,7 +102,7 @@ const MessageTypes = {
                     if (error) {
                         channel.send(`unable to find: ${queryString.replace(/\+/g, ' ')} :(`);
                     } else {
-                        channel.send('found it!');
+                        channel.send(`https://myanimelist.net/anime/${xmlParser(body).root.children[0].children[0].content}/`);
                     }
                 });
             }
